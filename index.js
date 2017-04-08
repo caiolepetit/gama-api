@@ -11,7 +11,7 @@ MongoClient.connect('mongodb://demoUser:gama@ds155820.mlab.com:55820/demo', func
     throw err;
   }
 
-  app.listen(3000, function () {
+  app.listen(process.env.PORT || 3000, function () {
     console.log('Example app listening on port 3000!');
   });
 
