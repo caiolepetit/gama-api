@@ -1,7 +1,7 @@
-module.exports = function (app,_db) {
+module.exports = function (app,db) {
 
   app.get('/api/user', function (req, res) {
-    _db.collection('testDemo').find().toArray(function(err, result) {
+    db.collection('testDemo').find().toArray(function(err, result) {
       if (err) {
         throw err;
       }
@@ -13,7 +13,7 @@ module.exports = function (app,_db) {
   app.post('/api/user', function (req, res) {
 
     try {
-      var collection = _db.collection('testDemo');
+      var collection = db.collection('testDemo');
 
       collection.save(req.body)
         .then (function (result) {
